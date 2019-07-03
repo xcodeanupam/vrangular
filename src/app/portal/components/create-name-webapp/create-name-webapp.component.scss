@@ -26,9 +26,11 @@
         padding: 0px 15px;
     }
     label {
-        padding: 0px 0px 5px;
-        display: block;
-        color: #4d4a4a;
+      padding: 0px 3px 5px;
+      display: block;
+      color: #0E432C;
+      font-size: 15px;
+      letter-spacing: 0px;
     }
     ::ng-deep{
     .login-page .mat-form-field-wrapper {
