@@ -1,0 +1,54 @@
+<div class="wrapper">
+    <div id="snow"></div>
+<section class="vr-web" fxFlex="1155px" fxFlex.xs="95%;" ngClass.xs="responsive-six"
+ngClass.sm="responsive-six1" ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
+<div fxLayout="row" fxLayoutAlign="center center">
+<div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
+<div ngClass="login-page" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="60%;" fxLayoutAlign="center center">
+<mat-card fxFlex="100%;">
+<h1>Background Image</h1>
+<div fxLayout="column" class="example-container">
+
+   <label>File to upload (.png, .jpg/.jpeg)</label>
+        <!-- <input matInput placeholder="&nbsp;Drop file here "> -->
+
+</div>
+
+<div fxLayout="column" fxLayout.xs="column" class="input-filedss">
+        <div>
+          <label>Upload Image </label>
+          <input type="file" (change)="startUpload($event.target.files)" name="upload image" />
+        </div>
+        <div *ngIf="(snapshot | async) as snap">
+          {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }}
+        </div>
+        <div *ngIf="(percentage | async) as pct">
+          {{ pct | number }}%
+        </div>
+      </div>
+
+     
+
+
+<div fxLayout="row" fxLayoutAlign="center center" ngClass="example-button-row">
+<button routerLink="/" ngClass="loginbtn uploadbtns"  mat-raised-button >Upload</button>
+<button routerLink="/" ngClass="loginbtn savebtn"  mat-raised-button >Save</button>
+</div>
+</mat-card>
+</div>
+<div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
+</div>
+</section>
+<ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>

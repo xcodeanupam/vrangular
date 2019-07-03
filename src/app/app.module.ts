@@ -8,6 +8,18 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './app/portal/components/login/login.component';
+import { PortalModule } from './portal/portal.module';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { AngularFireModule } from '@angular/fire';
+
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+
+
 
 @NgModule({
   declarations: [
@@ -17,11 +29,16 @@ import { LoginComponent } from './app/portal/components/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule,
-    BrowserAnimationsModule,
+    FlexLayoutModule, PortalModule, FormsModule,  ReactiveFormsModule,
+    BrowserAnimationsModule, AngularFirestoreModule, AngularFireStorageModule, AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
+  // declarations: [ AppComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

@@ -6,16 +6,20 @@ margin: 0 auto;    z-index: 9;
     font-family: "Open Sans", sans-serif;
     font-size:30px;
     margin-bottom: 1pc;
-    padding: 10px 0px 2px;
+    padding: 10px 0px 20px;
 }
 .login-page{
     margin-top: 25%;
     margin-bottom: 25%;
 }
 .login-page .example-container input {
-    width: 100%;
-    height: 45px;border: 1px solid #ddd;
-    font-size: 16px;background: #f1f3f2;
+  width: 93%;
+  height: 45px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  background: #f1f3f2;
+  margin-bottom: 12px;
+  padding: 0px 10px;
 }
 .loginbtn{
     background:#53c8a4;
@@ -29,11 +33,7 @@ margin: 0 auto;    z-index: 9;
 .example-button-row{
     padding: 0px 15px;
 }
-::ng-deep{
-.login-page .mat-form-field-wrapper {
-    padding-bottom: 0;
-}
-}
+
 .example-button-row button {
     margin: 30px 0px 0px 0px;
     width: 100%;
@@ -46,6 +46,13 @@ margin: 0 auto;    z-index: 9;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'Open Sans', sans-serif;
+}
+label {
+  padding: 5px 3px 5px;
+  display: block;
+  color: #0E432C;
+  font-size: 18px;
+  letter-spacing: 0px;
 }
 .example-button-row a {
     padding: 20px;

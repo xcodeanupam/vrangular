@@ -2,21 +2,14 @@
     margin: 0 auto;    z-index: 9;
     }
     .login-page h1{
-      text-align: center;
-      font-size: 35px;
-      margin-bottom: 40px;
-      padding: 25px 0px 10px;
-      color: white;
-      text-shadow: 1px 1px 1px #5d5959;
-      border-color: #fff;
-      border-style: double;
-      border-left: 0;
-      border-right: 0;
-      border-top: 0;
+        text-align: center;
+        font-size:30px;
+        margin-bottom: 5px;
+        padding: 15px 0px 15px;
     }
     .login-page{
-        margin-top: 4%;
-        margin-bottom:0%;
+        margin-top: 25%;
+        margin-bottom: 25%;
     }
     .login-page .example-container input {
         width: 100%;
@@ -29,44 +22,37 @@
     .example-container {
     padding: 15px 15px 0;;
     }
-  .boxes{width: 100%;}
-    .box {
-        background: #d9fef1;
-        margin-bottom: 20px;
-        height: 200px;
-    line-height: 80px;cursor: pointer;
+    .example-button-row{
+        padding: 0px 15px;
     }
-    .boxes h2 {
-        font-size: 17px;
-        text-align: center;
-        font-weight: normal;
-        padding: 3px 0px;
+    label {
+      padding: 0px 3px 5px;
+      display: block;
+      color: #0E432C;
+      font-size: 15px;
+      letter-spacing: 0px;
+    }button.mat-raised-button.loginbtn.uploadbtns {
+        background: #e36c5b;
     }
-    button.mat-raised-button.loginbtn:hover {
-      background: #d9fef1;
-      color: #000;
-      border: 1px solid #3d9d7e;
-  }
-  .box:hover {
-    background: #ececec;
-}
+    ::ng-deep{
+    .login-page .mat-form-field-wrapper {
+        padding-bottom: 0;
+    }
+    }
     .example-button-row button {
-      margin: 2pc 0px 2pc 0px;
-      box-shadow: none;
-      border: 0;
-      height: 55px;
-      padding: 0px 60px;
-      font-size: 20px;
-      color: #fdfffe;
-      background: #37a37b;
-      font-weight: normal;
-      letter-spacing: 1px;
-      font-family: "Open Sans", sans-serif;
-      border: 1px solid #bbcec8;
+        margin: 3pc 15px 2pc 0px;
+        box-shadow: none;
+        border: 0;
+        height: 45px;
+        padding: 0px 40px;
+        font-size: 18px;
+        color: #fff;
+        font-weight: normal;
+        /* text-transform: uppercase; */
+        letter-spacing: 1px;
+        font-family: "Open Sans", sans-serif;
     }
-    .example-button-row {
-        width: 100%;
-    }
+ 
     .wrapper {
         background: #50a3a2;
         background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
@@ -188,15 +174,4 @@
                   transform: translateY(-700px) rotate(600deg);
         }
       }
-      
-      .mat-icon-no-color {
-        text-align: center;
-        display: block;
-        margin: 0 auto;
-        padding: 40px 0px 13px;
-        font-size: 69px;
-        width: 65px;
-    }
-    .b1 {
-      width: 100%;
-  }
+    
