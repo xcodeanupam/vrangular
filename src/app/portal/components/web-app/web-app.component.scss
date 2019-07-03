@@ -2,10 +2,17 @@
     margin: 0 auto;    z-index: 9;
     }
     .login-page h1{
-        text-align: center;
-        font-size:30px;
-        margin-bottom: 5px;
-        padding: 25px 0px 45px;
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 40px;
+      padding: 25px 0px 10px;
+      color: white;
+      text-shadow: 1px 1px 1px #5d5959;
+      border-color: #fff;
+      border-style: double;
+      border-left: 0;
+      border-right: 0;
+      border-top: 0;
     }
     .login-page{
         margin-top: 4%;
@@ -24,7 +31,7 @@
     }
   .boxes{width: 100%;}
     .box {
-        background: #ddd;
+        background: #d9fef1;
         margin-bottom: 20px;
         height: 200px;
     line-height: 80px;
@@ -35,20 +42,28 @@
         font-weight: normal;
         padding: 3px 0px;
     }
+    button.mat-raised-button.loginbtn:hover {
+      background: #d9fef1;
+      color: #000;
+      border: 1px solid #3d9d7e;
+  }
+  .box:hover {
+    background: #75dbb7;
+}
     .example-button-row button {
-        margin: 2pc 0px 2pc 0px;
-        box-shadow: none;
-        border: 0;
-        height: 50px;
-        width: 100%;
-        padding: 0px 40px;
-        font-size: 18px;
-        color: #53d5a5;
-        background: #fff;
-        font-weight: normal;
-        letter-spacing: 1px;
-        font-family: "Open Sans", sans-serif;
-        border: 1px solid #9e9696;
+      margin: 2pc 0px 2pc 0px;
+      box-shadow: none;
+      border: 0;
+      height: 55px;
+      /* width: 100%; */
+      padding: 0px 60px;
+      font-size: 20px;
+      color: #fdfffe;
+      background: #53d4a5;
+      font-weight: normal;
+      letter-spacing: 1px;
+      font-family: "Open Sans", sans-serif;
+      border: 1px solid #ffffff;
     }
     .example-button-row {
         width: 100%;
