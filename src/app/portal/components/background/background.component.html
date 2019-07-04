@@ -1,55 +1,73 @@
 <div class="wrapper">
-    <div id="snow"></div>
-<section class="vr-web" fxFlex="1155px" fxFlex.xs="95%;" ngClass.xs="responsive-six"
-ngClass.sm="responsive-six1" ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
-<div fxLayout="row" fxLayoutAlign="center center">
-<div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
-<div ngClass="login-page" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="60%;" fxLayoutAlign="center center">
-<mat-card fxFlex="100%;">
-<h1>Background Image</h1>
-<div fxLayout="column" class="example-container">
+  <div id="snow"></div>
+  <section class="vr-web" fxFlex="1155px" fxFlex.xs="95%;" ngClass.xs="responsive-six" ngClass.sm="responsive-six1" ngClass.md="responsive-six2"
+    fxFlex.sm="535px" fxFlex.md="950px">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
+      <div ngClass="login-page" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="60%;" fxLayoutAlign="center center">
+        <mat-card fxFlex="100%;">
+          <h1>Background Image</h1>
+          <div fxLayout="column" class="example-container">
 
-   <label>File to upload (.png, .jpg/.jpeg)</label>
-        <!-- <input matInput placeholder="&nbsp;Drop file here "> -->
+            <label>File to upload (.png, .jpg/.jpeg)</label>
+            <!-- <input matInput placeholder="&nbsp;Drop file here "> -->
 
-</div>
+          </div>
+          <form>
+          <div class="dropzone" dropZone (hovered)="toggleHover($event)" (dropped)="startUpload($event)" [class.hovering]="isHovering">
+           <h3> Drop File Here</h3>
+            <div class="file">
+              <label class="file-label">
+               <!-- <input class="file-input" type="file" (change)="startUpload($event.target.files)"> -->
+               <span class="file-cta">
+                  <span class="file-icon">
+                    <mat-icon ngClass="drop-icon">cloud_download</mat-icon>
+                  </span>
+                  <!-- <span class="file-label">
+               or choose a file…
+             </span> -->
+                </span>
+              </label>
+            </div>
+          </div>
+          <div *ngIf="percentage | async as pct">
+            <progress class="progress is-info" [value]="pct" max="100"></progress>
+            {{ pct | number }}%
+          </div>
+          <div *ngIf="snapshot | async as snap">
+            <b>Preview this image in a few second</b>
+            <br/> {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }}
+            <div *ngIf="downloadURL | async as url">
+              <img [src]="url">
+            </div>
+            <!--   
+    <button (click)="task.pause()" class="button is-warning" [disabled]="!isActive(snap)">Pause</button>
+    <button (click)="task.cancel()" class="button is-danger" [disabled]="!isActive(snap)">Cancel</button>
+    <button (click)="task.resume()" class="button is-info"   [disabled]="!(snap?.state === 'paused')">Resume</button> -->
 
-<div fxLayout="column" fxLayout.xs="column" class="input-filedss">
-        <div>
-            <mat-icon ngClass="drop-icon">cloud_download</mat-icon>
-          <input type="file" (change)="startUpload($event.target.files)" name="upload image" />
-        </div>
-        <div *ngIf="(snapshot | async) as snap">
-          {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }}
-         
-        </div>
-        <div *ngIf="(percentage | async) as pct">
-          {{ pct | number }}%
-        </div>
+          </div>
+
+
+          <div fxLayout="row" fxLayoutAlign="center center" ngClass="example-button-row">
+            <!-- <button routerLink="/" ngClass="loginbtn uploadbtns"  mat-raised-button >Upload</button> -->
+            <button routerLink="/" ngClass="loginbtn savebtn" mat-raised-button>Save</button>
+          </div>
+          </form>
+        </mat-card>
       </div>
-
-     
-
-
-<div fxLayout="row" fxLayoutAlign="center center" ngClass="example-button-row">
-<button routerLink="/" ngClass="loginbtn uploadbtns"  mat-raised-button >Upload</button>
-<button routerLink="/" ngClass="loginbtn savebtn"  mat-raised-button >Save</button>
-</div>
-</mat-card>
-</div>
-<div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
-</div>
-</section>
-<ul class="bg-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+      <div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
+    </div>
+  </section>
+  <ul class="bg-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 </div>

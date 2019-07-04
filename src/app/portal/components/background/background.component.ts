@@ -4,8 +4,8 @@ import { v4 as uuid } from 'uuid';
 import { tap, finalize } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 
 
 @Component({
@@ -13,6 +13,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
   templateUrl: './background.component.html',
   styleUrls: ['./background.component.scss']
 })
+
+
 export class BackgroundComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
@@ -30,9 +32,12 @@ export class BackgroundComponent implements OnInit {
     private storage: AngularFireStorage,
     private db: AngularFirestore,
   ) { }
-
+  toggleHover(event: boolean) {
+    this.isHovering = event;
+  }
   ngOnInit() {
   }
+
   startUpload(event: FileList) {
     const file = event.item(0);
     if (file.type.split('/')[0] !== 'image') {
@@ -48,9 +53,9 @@ export class BackgroundComponent implements OnInit {
     this.percentage = this.task.percentageChanges();
     this.snapshot = this.task.snapshotChanges().pipe(
       tap(snap => {
-        // if (snap.bytesTransferred === snap.totalBytes) {
-        //   this.db.collection('').add({ path, size: snap.totalBytes });
-        // }
+        if (snap.bytesTransferred === snap.totalBytes) {
+          this.db.collection('review_pic').add({ path, size: snap.totalBytes });
+        }
       }),
       finalize(() => {
         this.downloadURL = this.storage.ref(path).getDownloadURL();
@@ -62,7 +67,13 @@ export class BackgroundComponent implements OnInit {
     );
   }
 
+
+
+
+
+  isActive(snapshot) {
+    // tslint:disable-next-line:semicolon
+    return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes
+  }
 }
-
-
 

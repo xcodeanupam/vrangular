@@ -8,7 +8,7 @@
         padding: 15px 0px 15px;
     }
     .login-page{
-        margin-top: 25%;
+        margin-top: 20%;
         margin-bottom: 25%;
     }
     .login-page .example-container input {
@@ -19,6 +19,16 @@
     .loginbtn{
         background:#53c8a4;
     }
+    img {
+      position: absolute;
+      top: 135px;
+      height: 207px;
+      width: 96%;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      left: 0;
+      right: 0;  }
     .example-container {
     padding: 15px 0px 0;;
     }
@@ -36,23 +46,10 @@
         background: #e36c5b;
     }
 
-    input[type="file"] {
-      width: 100%;
-      height: 200px;
-      border: 1px solid #ddd;
-         cursor: pointer;
-         z-index: 9;
-         position: relative;
-        //  opacity: 0; 
-  }
+   
   mat-icon.mat-icon.notranslate.drop-icon.material-icons.mat-icon-no-color {
-    width: 94%;
-    border: 2px dotted #ddd;
-    height: 200px;
-    line-height: 200px;
-    text-align: center;
-    font-size: 61px;    z-index: 1;
-    position: absolute;cursor: pointer;
+     font-size: 61px; 
+    color: #000;
 }
 
     ::ng-deep{
@@ -195,32 +192,25 @@
                   transform: translateY(-700px) rotate(600deg);
         }
       }
+  
+
+
+      .dropzone { 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 200px;
+        border: 2px dashed #3f4141;
+        border-radius: 5px;
+        background: white;
+        margin:0px 0 10px;
+        &.hovering {
+            border: 2px solid #f16624;
+            color: #dadada !important;
+        }
+    }
     
-      p {
-        font-family: Lato;
-      }
-      .dropzone {
-        min-height: 400px;
-        min-width: 400px;
-        display: table;
-        width: 100%;
-        background-color: #eee;
-        border: dotted 1px #aaa;
-      }
-      
-      .text-wrapper {
-        display: table-cell;
-        vertical-align: middle;
-      }
-      
-      .centered {
-        font-family: sans-serif;
-        font-size: 1.3em;
-        font-weight: bold;
-        text-align:center;
-      }
-
-
-
-
-      
+    progress::-webkit-progress-value {
+        transition: width 0.1s ease;
+    }

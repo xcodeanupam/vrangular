@@ -12,12 +12,12 @@ import { PortalModule } from './portal/portal.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { AngularFireModule } from '@angular/fire';
-
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
 
@@ -39,6 +39,5 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
 
 
