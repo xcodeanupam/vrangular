@@ -19,6 +19,7 @@ import { DropZoneDirective } from './components/background/dragDrop.directive';
 import { FileSizePipe } from './components/background/file-size.pipe';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
+import { RegisterComponent } from './components/register/register.component';
 
 const portalRoutes: Routes = [
   { path: '', pathMatch: 'full', component: LoginComponent },
@@ -26,15 +27,16 @@ const portalRoutes: Routes = [
   { path: 'name-webapp', component: CreateNameWebappComponent },
   { path: 'webapp', component: WebAppComponent },
   { path: 'webapp/background-image', component: BackgroundComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
   declarations: [LoginComponent, CreateWebComponent, CreateNameWebappComponent, WebAppComponent, DropZoneDirective,
-    FileSizePipe, BackgroundComponent, AudioComponent, ThreeDModelComponent, ButtonStyleComponent],
+    FileSizePipe, BackgroundComponent, AudioComponent, ThreeDModelComponent, ButtonStyleComponent, RegisterComponent],
   imports: [
     CommonModule, MatCardModule, FlexLayoutModule, MatFormFieldModule, MatButtonModule, MatIconModule, 
     MatSnackBarModule, MatInputModule,
-    DragDropModule, 
+    DragDropModule,
     RouterModule.forChild(portalRoutes)
   ]
 })

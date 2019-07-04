@@ -3,77 +3,78 @@
     }
     .login-page h1{
         text-align: center;
-        font-size:30px;
-        margin-bottom: 5px;
-        padding: 15px 0px 15px;
+        font-size: 30px;
+        margin-bottom: 0pc;
+        padding: 10px 0px 0px;
+        color: #4fcfa4;
+        /* font-family: open sans; */
+        font-weight: 900;
+        letter-spacing: 0.7px;
     }
     .login-page{
-        margin-top: 25%;
+        margin-top: 15%;
         margin-bottom: 25%;
     }
+    .login-page p {
+        font-size: 14px;
+        text-align: center;
+        color: #afb8b5;
+        padding-bottom: 20px;
+    }
     .login-page .example-container input {
-        width: 100%;
-        height: 45px;border: 1px solid #ddd;
-        font-size: 16px;background: #f1f3f2;text-align: center;
+        width: 93%;
+        height: 45px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        background: rgba(232, 232, 232, 0.2901960784);
+        margin-bottom: 12px;
+        padding: 0px 10px;
+        margin-bottom: 15px;
     }
     .loginbtn{
         background:#53c8a4;
     }
+    .example-button-row a span {
+        color: #52c3a5;cursor: pointer;
+    }
     .example-container {
-    padding: 15px 0px 0;;
+        padding: 0px 15px;
     }
     .example-button-row{
         padding: 0px 15px;
     }
-    label {
-      padding: 0px 3px 6px;
-      display: block;
-      color: #0E432C;
-      font-size: 17px;
-      letter-spacing: 0px;
-    }
-    button.mat-raised-button.loginbtn.uploadbtns {
-        background: #e36c5b;
-    }
-
-    input[type="file"] {
-      width: 100%;
-      height: 200px;
-      border: 1px solid #ddd;
-         cursor: pointer;
-         z-index: 9;
-         position: relative;
-        //  opacity: 0; 
-  }
-  mat-icon.mat-icon.notranslate.drop-icon.material-icons.mat-icon-no-color {
-    width: 94%;
-    border: 2px dotted #ddd;
-    height: 200px;
-    line-height: 200px;
-    text-align: center;
-    font-size: 61px;    z-index: 1;
-    position: absolute;cursor: pointer;
-}
-
-    ::ng-deep{
-    .login-page .mat-form-field-wrapper {
-        padding-bottom: 0;
-    }
-    }
+    
     .example-button-row button {
-        margin: 3pc 15px 2pc 0px;
+        margin: 30px 0px 0px 0px;
+        width: 100%;
         box-shadow: none;
         border: 0;
         height: 45px;
-        padding: 0px 40px;
         font-size: 18px;
         color: #fff;
         font-weight: normal;
-        /* text-transform: uppercase; */
+        text-transform: uppercase;
         letter-spacing: 1px;
-        font-family: "Open Sans", sans-serif;
+        font-family: 'Open Sans', sans-serif;
     }
- 
+    label {
+        padding: 5px 3px 5px;
+        display: block;
+        color: #0E432C;
+        font-size: 16px;
+    }
+    .example-button-row a {
+        padding: 20px;
+        font-size: 14px;
+    }
+    .example-button-row a {
+        padding: 20px;
+        font-size: 14px;
+    }
+    .example-container a {
+        font-size: 13px;
+        padding: 0px 2px;
+    }
     .wrapper {
         background: #50a3a2;
         background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
@@ -195,32 +196,9 @@
                   transform: translateY(-700px) rotate(600deg);
         }
       }
-    
-      p {
-        font-family: Lato;
-      }
-      .dropzone {
-        min-height: 400px;
-        min-width: 400px;
-        display: table;
-        width: 100%;
-        background-color: #eee;
-        border: dotted 1px #aaa;
-      }
-      
-      .text-wrapper {
-        display: table-cell;
-        vertical-align: middle;
-      }
-      
-      .centered {
-        font-family: sans-serif;
-        font-size: 1.3em;
-        font-weight: bold;
-        text-align:center;
-      }
+      ::ng-deep{
 
-
-
-
-      
+mat-card.mat-card {
+box-shadow: 1px 2px 1px -1px rgba(0,0,0,.2), -1px 1px 1px 0 rgba(0,0,0,.14), 2px -2px 3px 0 rgba(0,0,0,.12) !important;
+        }
+      }

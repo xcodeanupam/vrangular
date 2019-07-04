@@ -16,11 +16,12 @@ ngClass.sm="responsive-six1" ngClass.md="responsive-six2" fxFlex.sm="535px" fxFl
 
 <div fxLayout="column" fxLayout.xs="column" class="input-filedss">
         <div>
-          <label>Upload Image </label>
+            <mat-icon ngClass="drop-icon">cloud_download</mat-icon>
           <input type="file" (change)="startUpload($event.target.files)" name="upload image" />
         </div>
         <div *ngIf="(snapshot | async) as snap">
           {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }}
+         
         </div>
         <div *ngIf="(percentage | async) as pct">
           {{ pct | number }}%
