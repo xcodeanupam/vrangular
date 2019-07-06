@@ -8,14 +8,14 @@ ngClass.sm="responsive-six1" ngClass.md="responsive-six2" fxFlex.sm="535px" fxFl
 <mat-card fxFlex="100%;">
 <h1>How should the button look? clcik the button to begin styling it.</h1>
 <div fxLayout="column" class="example-container">
-    <mat-form-field>
-   <label>File to upload (.png, .jpg/.jpeg)</label>
-        <input matInput placeholder="&nbsp;Drop file here ">
-    </mat-form-field>
+        <input placeholder="next" [(colorPicker)]="color" [style.background]="color" >
+
+
+
+
 </div>
 
 <div fxLayout="row" fxLayoutAlign="center center" ngClass="example-button-row">
-<button routerLink="/" ngClass="loginbtn uploadbtns"  mat-raised-button >Upload</button>
 <button routerLink="/" ngClass="loginbtn savebtn"  mat-raised-button >Save</button>
 </div>
 </mat-card>

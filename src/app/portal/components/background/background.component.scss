@@ -21,9 +21,9 @@
     }
     img {
       position: absolute;
-      top: 135px;
-      height: 207px;
-      width: 96%;
+      top: 130px;
+      height: 199px;
+      width: 95%;
       display: block;
       margin: 0 auto;
       text-align: center;
@@ -192,8 +192,6 @@
                   transform: translateY(-700px) rotate(600deg);
         }
       }
-  
-
 
       .dropzone { 
         display: flex;
@@ -210,7 +208,6 @@
             color: #dadada !important;
         }
     }
-    
     progress::-webkit-progress-value {
         transition: width 0.1s ease;
     }

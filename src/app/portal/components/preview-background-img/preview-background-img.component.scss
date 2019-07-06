@@ -1,0 +1,34 @@
+
+  
+  mat-icon.mat-icon.notranslate.drop-icon.material-icons.mat-icon-no-color {
+     font-size: 61px; 
+    color: #000;
+}
+
+    .example-button-row button {
+      margin: 0pc 11px 7pc 0px;
+      box-shadow: none; 
+      border: 0;
+      height: 45px;
+      padding: 0px 13px;
+      font-size: 16px;
+      color: #000;
+      line-height: 30px;
+      min-width: auto;
+      background:#fff;
+    }
+
+      .example-button-row {
+        position: absolute;
+        z-index: 9;
+        bottom: 20px;
+        right: 10px;
+        padding: 0px 15px;
+    }
+    html.a-fullscreen {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+  }

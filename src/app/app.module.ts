@@ -10,24 +10,20 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PortalModule } from './portal/portal.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
-
-
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
-    AppComponent  ],
+    AppComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule, PortalModule, FormsModule,  ReactiveFormsModule,
-    BrowserAnimationsModule, AngularFirestoreModule, AngularFireStorageModule, AngularFireAuthModule,
+    BrowserAnimationsModule, AngularFirestoreModule, AngularFireStorageModule, AngularFireAuthModule, HttpModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

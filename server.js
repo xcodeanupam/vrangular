@@ -36,7 +36,7 @@ app.set('port', port);
 var mongodbURI;
 
 mongoose.Promise = global.Promise;
-var mongodb = mongoose.connect('mongodb://infobedrating:niRokG1MZXHLlYI6@cluster0-shard-00-00-njxwh.mongodb.net:27017,cluster0-shard-00-01-njxwh.mongodb.net:27017,cluster0-shard-00-02-njxwh.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority', { useNewUrlParser: true });
+var mongodb = mongoose.connect('mongodb://grae:grae12345@ds347707.mlab.com:47707/vrangular', { useNewUrlParser: true });
 
 mongodb
     .then(function (db) {
@@ -47,7 +47,7 @@ mongodb
         });
         if (!module.parent) {
             app.listen(app.get('port'), function () {
-                console.log('review App listening on port ' + app.get('port'));
+                console.log('VR App listening on port ' + app.get('port'));
             });
         }
 

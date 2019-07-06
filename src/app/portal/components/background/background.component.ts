@@ -20,7 +20,7 @@ export class BackgroundComponent implements OnInit {
   submitted = false;
   categories: any;
   task: AngularFireUploadTask;
-  percentage: Observable<number>;
+  percentage: Observable<number>; 
   snapshot: Observable<any>;
   downloadURL: Observable<string>;
   isHovering: boolean;

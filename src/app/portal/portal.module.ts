@@ -17,9 +17,22 @@ import { ButtonStyleComponent } from './components/button-style/button-style.com
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DropZoneDirective } from './components/background/dragDrop.directive';
 import { FileSizePipe } from './components/background/file-size.pipe';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatInputModule} from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatInputModule } from '@angular/material/input';
 import { RegisterComponent } from './components/register/register.component';
+import { PreviewBackgroundImgComponent } from './components/preview-background-img/preview-background-img.component';
+import { ThreeDModelViewComponent } from './components/three-d-model-view/three-d-model-view.component';
+import { ColorPickerModule } from 'ngx-color-picker';
+import { ViewWebappComponent } from './components/view-webapp/view-webapp.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JwtModule } from '@auth0/angular-jwt';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthServices } from './service/auth.service';
+import { UserserviceService } from './service/userservice.service';
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
+import {MatDialogModule} from '@angular/material/dialog';
 
 const portalRoutes: Routes = [
   { path: '', pathMatch: 'full', component: LoginComponent },
@@ -27,21 +40,37 @@ const portalRoutes: Routes = [
   { path: 'name-webapp', component: CreateNameWebappComponent },
   { path: 'webapp', component: WebAppComponent },
   { path: 'webapp/background-image', component: BackgroundComponent },
+  { path: 'webapp/audio', component: AudioComponent },
+  { path: 'webapp/3d-model', component: ThreeDModelComponent },
+  { path: 'webapp/button-style', component: ButtonStyleComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'background/preview', component: PreviewBackgroundImgComponent },
+  { path: '3d-model/view', component: ThreeDModelViewComponent },
+  { path: 'view', component: ViewWebappComponent },
 ];
+
 
 @NgModule({
   declarations: [LoginComponent, CreateWebComponent, CreateNameWebappComponent, WebAppComponent, DropZoneDirective,
-    FileSizePipe, BackgroundComponent, AudioComponent, ThreeDModelComponent, ButtonStyleComponent, RegisterComponent],
-  imports: [
-    CommonModule, MatCardModule, FlexLayoutModule, MatFormFieldModule, MatButtonModule, MatIconModule, 
-    MatSnackBarModule, MatInputModule,
-    DragDropModule,
+    FileSizePipe, BackgroundComponent, AudioComponent, ThreeDModelComponent, ButtonStyleComponent, RegisterComponent, PreviewBackgroundImgComponent, ThreeDModelViewComponent, ViewWebappComponent],
+  imports: [HttpClientModule, FormsModule, ReactiveFormsModule,
+    CommonModule, MatCardModule, FlexLayoutModule, MatFormFieldModule, MatButtonModule, MatIconModule,
+    MatSnackBarModule, MatInputModule, ColorPickerModule, MatDialogModule,
+    DragDropModule, JwtModule.forRoot({
+      config: {
+        tokenGetter,
+        whitelistedDomains: ['localhost:3001'],
+        blacklistedRoutes: ['localhost:3001/auth/']
+      }
+    }),
     RouterModule.forChild(portalRoutes)
-  ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  ], providers: [
+    AuthServices, UserserviceService
 
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class PortalModule { }
 
 
