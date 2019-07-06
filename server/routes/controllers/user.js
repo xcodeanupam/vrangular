@@ -37,7 +37,7 @@ var UserCtrl = (function (_super) {
                     console.log('hiiii', user);
 
 
-                    var token = jwt.sign( user.toJSON() , process.env.SECRET_TOKEN); // , { expiresIn: 10 } seconds
+                    var token = jwt.sign({ user: user }, 'love'); // , { expiresIn: 10 } seconds
                     res.status(200).json({ token: token, user: user });
                 });
             });
@@ -45,7 +45,7 @@ var UserCtrl = (function (_super) {
 
 
         _this.weblogin = function (req, res) {
-            console.log('hiiii data', req.body);
+            console.log('hiiii', req);
             _this.model.findOne({ email: req.body.email }, function (err, user) {
                 if (!user) {
                     console.log('not found', req.body.email);
@@ -55,11 +55,11 @@ var UserCtrl = (function (_super) {
                 user.comparePassword(req.body.password, function (error, isMatch) {
                     if (!isMatch) {
                         console.log(' compare not found', req.body.email);
+
                         return res.sendStatus(403);
                     }
-                    console.log('user data',  user);
+
                     var token = jwt.sign({ user: user }, process.env.SECRET_TOKEN); // , { expiresIn: 10 } seconds
-                    console.log('token is', token)
                     res.status(200).json({ token: token });
                 });
             });
@@ -102,20 +102,8 @@ var UserCtrl = (function (_super) {
                 io.emit('allUsers', docs);
             });
         };
-
-
-        _this.upuserprofile = function (req, res) {
-            _this.model.findOneAndUpdate({ email: req.params.id }, req.body, function (err) {
-                if (err) {
-                    return console.error(err);
-                }
-                res.sendStatus(200);
-            });
-        };
-
-
         return _this;
     }
     return UserCtrl;
-}(base_1.default, user_1.default));
+}(base_1.default));
 exports.default = UserCtrl;

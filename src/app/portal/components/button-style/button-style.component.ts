@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./button-style.component.scss']
 })
 export class ButtonStyleComponent implements OnInit {
-
+  color: any;
   constructor() { }
 
   ngOnInit() {
