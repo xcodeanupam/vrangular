@@ -10,7 +10,7 @@
           <div fxLayout="column" class="example-container">
 
             <label>File to upload (.stl, .obj, .usdz, .fxd, .collada)</label>
-            <form>
+            <form class="ss" [formGroup]="createprojectForm" (ngSubmit)="createname()">
               <div class="dropzone" dropZone (hovered)="toggleHover($event)" (dropped)="startUpload($event)"
                 [class.hovering]="isHovering">
                 <h3> Drop File Here</h3>
@@ -38,12 +38,12 @@
               </div>
               <div class="input-group" >
                 <label>Model Description</label>
-                <textarea type="discription" name="discription" formControlName="discription" matInput
+                <textarea type="text" name="projectDiscription" formControlName="projectDiscription" matInput
                   placeholder="Model Description...">
-        </textarea>
+                 </textarea>
               </div>
-              <div fxLayout="row" fxLayoutAlign="center center" ngClass="example-button-row">
-                <button routerLink="/3d-model/view" ngClass="loginbtn savebtn" mat-raised-button>Save</button>
+              <div fxLayout="row" fxLayoutAlign="center center" class="example-button-row">
+                <input type="submit" ngClass="loginbtn savebtn" mat-raised-button value="Save">
               </div>
             </form>
           </div>

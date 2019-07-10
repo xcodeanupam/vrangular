@@ -32,44 +32,49 @@ import { UserserviceService } from './service/userservice.service';
 export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HeaderComponent } from './components/header/header.component';
+import { AllProjectsComponent } from './components/all-projects/all-projects.component';
 
 const portalRoutes: Routes = [
   { path: '', pathMatch: 'full', component: LoginComponent },
   { path: 'new-web-app', component: CreateWebComponent },
   { path: 'name-webapp', component: CreateNameWebappComponent },
-  { path: 'webapp', component: WebAppComponent },
-  { path: 'webapp/background-image', component: BackgroundComponent },
-  { path: 'webapp/audio', component: AudioComponent },
-  { path: 'webapp/3d-model', component: ThreeDModelComponent },
-  { path: 'webapp/button-style', component: ButtonStyleComponent },
+  { path: 'project/:name',  pathMatch: 'full', component: WebAppComponent },
+  { path: 'webapp/background-image/:name',  pathMatch: 'full', component: BackgroundComponent },
+  { path: 'webapp/audio/:name',  pathMatch: 'full', component: AudioComponent },
+  { path: 'webapp/3d-model/:name',  pathMatch: 'full', component: ThreeDModelComponent },
+  { path: 'webapp/button-style/:name',  pathMatch: 'full', component: ButtonStyleComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'background/preview', component: PreviewBackgroundImgComponent },
   { path: '3d-model/view', component: ThreeDModelViewComponent },
   { path: 'view', component: ViewWebappComponent },
+  { path: 'portal/all-projects', component: AllProjectsComponent },
 ];
 
 
 @NgModule({
   declarations: [LoginComponent, CreateWebComponent, CreateNameWebappComponent, WebAppComponent, DropZoneDirective,
-    FileSizePipe, BackgroundComponent, AudioComponent, ThreeDModelComponent, ButtonStyleComponent, RegisterComponent, PreviewBackgroundImgComponent, ThreeDModelViewComponent, ViewWebappComponent],
-  imports: [HttpClientModule, FormsModule, ReactiveFormsModule,
+    FileSizePipe, BackgroundComponent, AudioComponent, ThreeDModelComponent, ButtonStyleComponent,
+    RegisterComponent, PreviewBackgroundImgComponent, ThreeDModelViewComponent, ViewWebappComponent,
+    HeaderComponent,
+    AllProjectsComponent],
+
+    imports: [HttpClientModule, FormsModule, ReactiveFormsModule,
     CommonModule, MatCardModule, FlexLayoutModule, MatFormFieldModule, MatButtonModule, MatIconModule,
     MatSnackBarModule, MatInputModule, ColorPickerModule, MatDialogModule,
-    DragDropModule, JwtModule.forRoot({
-      config: {
-        tokenGetter,
-        whitelistedDomains: ['localhost:3001'],
+    DragDropModule, JwtModule.forRoot({ config:
+     {
+        tokenGetter, whitelistedDomains: ['localhost:3001'],
         blacklistedRoutes: ['localhost:3001/auth/']
       }
     }),
-    RouterModule.forChild(portalRoutes)
-  ], providers: [
+    RouterModule.forChild(portalRoutes)], providers: [
     AuthServices, UserserviceService
-
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-})
+  exports: [ HeaderComponent],
+   })
 
 export class PortalModule { }
 

@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { MatSnackBar } from '@angular/material';
 import { AuthServices } from '../../service/auth.service';
+import { v4 as uuid } from 'uuid';
 
 @Component({
   selector: 'app-register',
@@ -48,6 +49,7 @@ export class RegisterComponent implements OnInit {
       phone: this.phone,
       email: this.email,
       password: this.password,
+      user_id: uuid()
     });
   }
   setClassUsername() {

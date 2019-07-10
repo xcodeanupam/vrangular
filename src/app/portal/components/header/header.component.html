@@ -1,0 +1,5 @@
+<div fxLayout="row" ngClass="header" fxLayoutAlign="end center" fxLayoutGap="50px">
+<div routerLink="/portal/all-projects"><mat-icon>home</mat-icon>Home</div>
+<div><mat-icon>power_settings_new</mat-icon>
+    <a *ngIf="isLoggedin" (click)="funcLogout()">Logout </a> </div>
+</div>

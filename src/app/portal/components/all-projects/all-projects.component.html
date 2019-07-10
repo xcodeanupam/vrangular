@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="wrapper">
+
+    <section class="vr-web" fxFlex="1155px" fxFlex.xs="95%;" ngClass.xs="responsive-six" ngClass.sm="responsive-six1"
+        ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
+
+        <div fxLayout="row" ngClass="all-productss" fxLayoutAlign="center center">
+            <div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
+            <mat-card>
+                <div fxLayout="column" ngClass="login-page" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="100%;"
+                    fxLayoutAlign="center center">
+                    <h1>All Web App</h1>
+                    <ul>
+                        <div class="name" *ngFor="let project of projectnameData">
+                            <li (click)="currentProject(project.projectname)">{{project.projectname}}</li>
+                        </div>
+                    </ul>
+                    <div fxLayout="column" fxFlex="100%" fxLayoutAlign="end center" ngClass="example-button-row">
+                        <button routerLink="/new-web-app" ngClass="loginbtn" mat-raised-button>Create New</button>
+                    </div>
+                </div>
+            </mat-card>
+            <div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
+        </div>
+    </section>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>

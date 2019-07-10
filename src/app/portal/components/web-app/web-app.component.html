@@ -1,67 +1,72 @@
+<app-header></app-header>
 <div class="wrapper">
-        <div id="snow"></div>
-    <section class="vr-web" fxFlex="1155px" fxFlex.xs="95%;" ngClass.xs="responsive-six"
-    ngClass.sm="responsive-six1" ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
-    <div fxLayout="row" fxLayoutAlign="center center">
-    <div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
-    <div fxLayout="column" ngClass="login-page" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="60%;" fxLayoutAlign="center center">
-    <h1>Web App Name</h1>
 
-            <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"  ngClass="boxes" fxLayoutGap="20px">
-            <div ngClass="b1">
-                <button routerLink="/webapp/background-image" fxFlex="100%" fxFlex.xs="100%"  fxFlex.sm="100%"  mat-raised-button ngClass="box box1">
-                <mat-icon>perm_media</mat-icon>
-            <h2>Background Image</h2> 
-            </button>
-            </div>
-            <div ngClass="b1">
-                <button routerLink="/webapp/audio" fxFlex="100%" fxFlex.xs="100%"  fxFlex.sm="100%"  mat-raised-button ngClass="box box2">
-                    <mat-icon>play_circle_filled</mat-icon>
-                     <h2>Audio</h2>
-               </button>
-               </div>
-            </div>
+    <section class="vr-web" fxFlex="1155px" fxFlex.xs="95%;" ngClass.xs="responsive-six" ngClass.sm="responsive-six1"
+        ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
 
-            <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" ngClass="boxes" fxLayoutGap="20px">
-                <div ngClass="b1">
-                    <button routerLink="/webapp/3d-model" fxFlex="100%" fxFlex.xs="100%"  fxFlex.sm="100%"  mat-raised-button ngClass="box box3">
-                       <mat-icon>layers</mat-icon>
-                        <h2>3D Model(s)</h2>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
+            <div fxLayout="column" ngClass="login-page" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="60%;"
+                fxLayoutAlign="center center">
+
+
+                <div class="name">
+                    <h1>{{projectname}}</h1>
+                    <!-- <h1>play</h1> -->
+                </div>
+                <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" ngClass="boxes" fxLayoutGap="20px">
+                    <div ngClass="b1">
+                        <button (click)="currentProjectImage(projectname)" fxFlex="100%" fxFlex.xs="100%"
+                            fxFlex.sm="100%" mat-raised-button ngClass="box box1">
+                            <mat-icon>perm_media</mat-icon>
+                            <h2>Background Image</h2>
                         </button>
-                 </div>
-                       <div ngClass="b1">
-                         <button routerLink="/webapp/button-style" fxFlex="100%" fxFlex.xs="100%"  fxFlex.sm="100%"  mat-raised-button ngClass="box box1">
-                         <mat-icon>view_compact</mat-icon>
-                         <h2>Button Style</h2>
-                        </button>
-                      </div>
                     </div>
+                    <div ngClass="b1">
+                        <button (click)="currentProjectAudio(projectname)" fxFlex="100%" fxFlex.xs="100%"
+                            fxFlex.sm="100%" mat-raised-button ngClass="box box2">
+                            <mat-icon>play_circle_filled</mat-icon>
+                            <h2>Audio</h2>
+                        </button>
+                    </div>
+                </div>
+
+                <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" ngClass="boxes" fxLayoutGap="20px">
+                    <div ngClass="b1">
+                        <button (click)="currentProjectModel(projectname)" fxFlex="100%" fxFlex.xs="100%"
+                            fxFlex.sm="100%" mat-raised-button ngClass="box box3">
+                            <mat-icon>layers</mat-icon>
+                            <h2>3D Model(s)</h2>
+                        </button>
+                    </div>
+                    <div ngClass="b1">
+                        <button (click)="currentProjectButton(projectname)" fxFlex="100%" fxFlex.xs="100%"
+                            fxFlex.sm="100%" mat-raised-button ngClass="box box1">
+                            <mat-icon>view_compact</mat-icon>
+                            <h2>Button Style</h2>
+                        </button>
+                    </div>
+                </div>
 
 
-    
+                <div fxLayout="column" fxFlex="100%" fxLayoutAlign="end center" ngClass="example-button-row">
+                    <button routerLink="/view" ngClass="loginbtn" mat-raised-button>Play</button>
+                </div>
 
-
-
-
-    <div fxLayout="column" fxFlex="100%" fxLayoutAlign="end center" ngClass="example-button-row">
-    <button routerLink="/view" ngClass="loginbtn"  mat-raised-button >Save</button>
-    </div>
-    
-    </div>
-    <div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
-    </div>
+            </div>
+            <div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="20%;"></div>
+        </div>
     </section>
     <ul class="bg-bubbles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-    
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>

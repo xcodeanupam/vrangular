@@ -1,15 +1,22 @@
+<app-header></app-header>
 <div class="wrapper">
     <section fxLayout="column" class="vr-web" fxFlex="1155px" fxFlex.xs="95%;" ngClass.xs="responsive-six"
         ngClass.sm="responsive-six1" ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
-        <div fxLayout="row">
-            <div fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="60%;">
+        <div ngClass="audios" fxLayoutAlign="start center">
+            <mat-icon>volume_up</mat-icon>
+        </div>
+
+        <div fxLayout="row" fxFlex="100%;" fxLayout.xs="column" fxLayout.sm="column" ngClass="login-page"
+            fxLayoutGap="50px">
+            <div fxFlex.xs="100%;" class="aframe-can" fxFlex.sm="100%;" fxFlex="60%;" fxLayoutGap.xs="0px;"
+                fxLayoutGap.sm="0px;">
                 <a-scene>
                     <a-sky id="one" src="assets/3.png" rotation="0 -130 0">
                     </a-sky>
                 </a-scene>
             </div>
-            <div fxLayout="column" ngClass="login-page" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="40%;"
-                fxLayoutAlign="center center">
+
+            <div fxLayout="row" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="40%;">
                 <mat-card fxFlex="100%;">
                     <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                         been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
@@ -22,15 +29,26 @@
                         with
                         desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </mat-card>
-                <div fxLayout="row" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="100%;" fxLayoutAlign="center center">
-                    <div fxLayout="row" fxLayoutAlign="center center" ngClass="example-button-row">
-                        <button ngClass="loginbtn " mat-raised-button>Back</button>
-                        <button  ngClass="loginbtn " mat-raised-button>Next</button>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
 
+        <div fxLayout="row" fxFlex="100%;" fxLayoutAlign="center center" ngClass="example-button-row">
+            <button ngClass="loginbtn " mat-raised-button>Back</button>
+            <button ngClass="loginbtn " mat-raised-button>Next</button>
+        </div>
+
+    </section>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 
 </div>

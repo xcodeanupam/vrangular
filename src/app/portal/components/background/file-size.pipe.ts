@@ -23,5 +23,4 @@ export class FileSizePipe implements PipeTransform {
 
     return size ? `${formattedSize} ${unit}` : '0';
   }
-
 }

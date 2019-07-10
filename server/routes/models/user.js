@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var bcrypt = require("bcryptjs");
 var mongoose = require("mongoose");
 var userSchema = new mongoose.Schema({
+    user_id: { type: String , unique: true, required: true, dropDups: true  },
     username: String,
     email: { type: String, unique: true, lowercase: true, trim: true },
     password: {type: String, default: '$2a$10$OxHlqsOmNc.qJnzexqJEveFyii3T8XNpwZ99aaVvZpVAi1Zbc3ewi'  },
