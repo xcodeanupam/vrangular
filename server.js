@@ -5,12 +5,12 @@ const http = require("http");
 var morgan = require("morgan");
 var nodemailer = require("nodemailer");
 const app = express();
-// app.use(function (req, res, next) {
-//     if (req.header('x-forwarded-proto') !== 'https')
-//         res.redirect(`https://${req.header('host')}${req.url}`)
-//     else
-//         next();
-// });
+app.use(function (req, res, next) {
+    if (req.header('x-forwarded-proto') !== 'https')
+        res.redirect(`https://${req.header('host')}${req.url}`)
+    else
+        next();
+});
 
 
 var dotenv = require('dotenv').config({ path: __dirname + '/.env' })
