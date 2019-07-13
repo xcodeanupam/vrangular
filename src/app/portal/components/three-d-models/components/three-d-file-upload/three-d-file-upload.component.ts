@@ -7,15 +7,15 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthServices } from '../../service/auth.service';
-import { UserserviceService } from '../../service/userservice.service';
+import { AuthServices } from '../../../../service/auth.service';
+import { UserserviceService } from '../../../../service/userservice.service';
 
 @Component({
-  selector: 'app-three-d-model',
-  templateUrl: './three-d-model.component.html',
-  styleUrls: ['./three-d-model.component.scss']
+  selector: 'app-three-d-file-upload',
+  templateUrl: './three-d-file-upload.component.html',
+  styleUrls: ['./three-d-file-upload.component.scss']
 })
-export class ThreeDModelComponent implements OnInit {
+export class ThreeDFileUploadComponent implements OnInit {
 
   registerForm: FormGroup;
   submitted = false;
@@ -35,7 +35,6 @@ export class ThreeDModelComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     public snackBar: MatSnackBar,
-   
     private storage: AngularFireStorage,
     private db: AngularFirestore,
     public route: ActivatedRoute,
@@ -48,10 +47,11 @@ export class ThreeDModelComponent implements OnInit {
 
   ngOnInit() {
     this.createprojectForm = this.formBuilder.group({
-      projectname: ['', Validators.required],
+      projectname: [],
       user_id: this.user_id,
       project_id: uuid(),
-      projectDiscription: [],
+      data_id: uuid(),
+      discription: [],
     });
   }
 
@@ -88,12 +88,12 @@ export class ThreeDModelComponent implements OnInit {
       duration: 2000,
     });
   }
-  createname() {
+  savedata() {
     console.log('form create a webapp', this.createprojectForm.value);
     this.userService.addProject(this.createprojectForm.value).subscribe(
       res => {
         this.openSnackBar('Added successfully', 'Success');
-        this.router.navigate(['/viewapp']);
+        this.router.navigate(['/three-d-model/create-project']);
       },
       //  error => error
       error => this.openSnackBar('Invalid credentials', 'Error')
@@ -105,4 +105,5 @@ export class ThreeDModelComponent implements OnInit {
     return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes
   }
 }
+
 

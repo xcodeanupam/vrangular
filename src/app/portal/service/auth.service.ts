@@ -11,7 +11,7 @@ import { Http } from '@angular/http';
 export class AuthServices {
   loggedIn = false;
   isAdmin = false;
-  currentUser = { user_id: '', username: '', email: '' };
+  currentUser = { user_id: '', username: '', email: '', new: '' };
 
   constructor(
     public jwtHelper: JwtHelperService,
@@ -53,7 +53,7 @@ export class AuthServices {
     localStorage.removeItem('cart');
     this.loggedIn = false;
     this.isAdmin = false;
-    this.currentUser = { user_id: '', username: '',  email: '' };
+    this.currentUser = { user_id: '', username: '',  email: '', new: '' };
     this.router.navigate(['/']);
   }
 
@@ -68,6 +68,7 @@ export class AuthServices {
       this.currentUser.user_id = decodedUser.user.user_id;
       this.currentUser.username = decodedUser.user.username;
       this.currentUser.email = decodedUser.user.email;
+      this.currentUser.new = decodedUser.user.new;
     }
   }
 

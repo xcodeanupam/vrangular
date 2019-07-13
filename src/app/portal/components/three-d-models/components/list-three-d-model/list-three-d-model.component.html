@@ -1,0 +1,49 @@
+<app-header></app-header>
+<section class="vr-web" fxFlex="1155px" fxFlex.xs="95%;" ngClass.xs="responsive-six" ngClass.sm="responsive-six1"
+ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
+<div fxLayout="row" class="project-file" fxLayoutAlign="center center">
+  <div ngClass="login-page" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="100%;" fxLayoutAlign="center center">
+    <mat-card fxFlex="100%;">
+      <h1>3D Model</h1>
+      <div fxLayout="column" class="example-container">
+            <div class="tabel-listing">
+                   
+                    <table mat-table  class="mat-elevation-z8">
+          
+                            <ng-container matColumnDef="bedName">
+                              <th mat-header-cell > File Type </th>
+                              <td mat-cell ="let element">  </td>
+                            </ng-container>
+                
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="productType">
+                              <th mat-header-cell > Name </th>
+                              <td mat-cell ></td>
+                            </ng-container>
+                
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="totalView">
+                              <th mat-header-cell> Date Added </th>
+                              <td mat-cell ="let element"> </td>
+                            </ng-container>
+                            <ng-container matColumnDef="totalView">
+                                    <th mat-header-cell> Discription </th>
+                                    <td mat-cell ="let element"> </td>
+                                  </ng-container>
+                          </table>
+
+
+
+                          
+                          <div class="example-button-row">
+                                <button routerLink="/three-d-model/upload-file" mat-raised-button color="primary">Add First 3D-Model</button>
+                              </div>
+
+
+                    <!-- <a routerLink="/">Learn More</a> -->
+                  </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+</section>

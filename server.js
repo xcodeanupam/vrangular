@@ -5,12 +5,12 @@ const http = require("http");
 var morgan = require("morgan");
 var nodemailer = require("nodemailer");
 const app = express();
-app.use(function (req, res, next) {
-    if (req.header('x-forwarded-proto') !== 'https')
-        res.redirect(`https://${req.header('host')}${req.url}`)
-    else
-        next();
-});
+// app.use(function (req, res, next) {
+//     if (req.header('x-forwarded-proto') !== 'https')
+//         res.redirect(`https://${req.header('host')}${req.url}`)
+//     else
+//         next();
+// });
 
 
 var dotenv = require('dotenv').config({ path: __dirname + '/.env' })
@@ -36,7 +36,7 @@ app.set('port', port);
 var mongodbURI;
 
 mongoose.Promise = global.Promise;
-var mongodb = mongoose.connect('mongodb://grae:grae12345@ds347707.mlab.com:47707/vrangular', { useNewUrlParser: true });
+var mongodb = mongoose.connect('mongodb://grae:grae12345@ds249967.mlab.com:49967/vrangular', { useNewUrlParser: true });
 
 mongodb
     .then(function (db) {

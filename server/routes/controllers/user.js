@@ -102,6 +102,19 @@ var UserCtrl = (function (_super) {
                 io.emit('allUsers', docs);
             });
         };
+
+        
+         // Update by user_id
+         this.updateUserProject = function (req, res) {
+            _this.model.updateOne({ user_id: req.body.user_id }, req.body, function (err) {
+                if (err) {
+                    return console.error(err);
+                }
+                res.sendStatus(200);
+            });
+        };
+
+
         return _this;
     }
     return UserCtrl;

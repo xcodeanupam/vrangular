@@ -7,24 +7,8 @@ var userSchema = new mongoose.Schema({
     username: String,
     email: { type: String, unique: true, lowercase: true, trim: true },
     password: {type: String, default: '$2a$10$OxHlqsOmNc.qJnzexqJEveFyii3T8XNpwZ99aaVvZpVAi1Zbc3ewi'  },
-    image: { type: String, default: 'https://avatars0.githubusercontent.com/u/19704851?s=88&v=4' },
     phone: String,
-    firstname: String,
-    lastname: String,
-    website: String,
-    company: String,
-    bedName: String,
-    productType: String,
-    productDescription: String,
-    facebookPage: String,
-    googlePage: String,
-    linkedInPage: String,
-    productType: String,
-    youTubePage: String,
-    loginType:  {type: String, default: 'custom'  },
-    block:{ type: Boolean, default:false },
-    totalreviews: {type: String, default: '0'},
-    userrole:{ type: String, default: 'user'  }, 
+    new: {type: String, default: 'true'}
 }); 
 userSchema.pre('save', function (next) {
     var user = this;

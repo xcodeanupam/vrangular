@@ -1,5 +1,29 @@
-<div fxLayout="row" ngClass="header" fxLayoutAlign="end center" fxLayoutGap="50px">
-<div routerLink="/portal/all-projects"><mat-icon>home</mat-icon>Home</div>
-<div><mat-icon>power_settings_new</mat-icon>
-    <a *ngIf="isLoggedin" (click)="funcLogout()">Logout </a> </div>
+<div fxLayout="row" ngClass="header"  fxLayoutGap="50px">
+    <div  fxLayoutAlign="start center" class="header1" fxLayoutGap="50px">
+    <div routerLink="/">
+        <img src="https://cdn3.vectorstock.com/i/1000x1000/50/92/metal-blue-alphabet-letter-vr-v-r-logo-company-vector-20695092.jpg" style="
+        width:45px;height:45px;border-radius:50%;">
+    </div>
+    <ul>
+    <li routerLink="/home"  routerLinkActive="active-link">
+        Home
+    </li>
+    <li routerLink="/portal/Background"  routerLinkActive="active-link">
+     Background
+    </li>
+    <li routerLink="/portal/Background"  routerLinkActive="active-link">
+      Audio
+    </li>
+    <li routerLink="/portal/Background"  routerLinkActive="active-link">
+        Button
+    </li>
+    <li routerLink="/three-d-model"  routerLinkActive="active-link">
+      3d-Models
+    </li>
+    </ul>
+    </div>
+    <div fxLayoutAlign="end center" >
+        <mat-icon>power_settings_new</mat-icon>
+        <a *ngIf="isLoggedin" (click)="funcLogout()">Logout </a>
+    </div>
 </div>

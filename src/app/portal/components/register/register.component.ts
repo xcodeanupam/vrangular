@@ -35,13 +35,13 @@ export class RegisterComponent implements OnInit {
     Validators.minLength(6)
   ]);
 
-  constructor( 
-     private formBuilder: FormBuilder,
+  constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
     public dialog: MatDialog,
     public snackBar: MatSnackBar,
     public auth: AuthServices,
-    private userService: UserserviceService ) { }
+    private userService: UserserviceService) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
       phone: this.phone,
       email: this.email,
       password: this.password,
-      user_id: uuid()
+      user_id: uuid(),
     });
   }
   setClassUsername() {
@@ -64,7 +64,7 @@ export class RegisterComponent implements OnInit {
   setClassPhone() {
     return { 'has-danger': !this.phone.pristine && !this.phone.valid };
   }
- 
+
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
       duration: 2000,
@@ -73,22 +73,18 @@ export class RegisterComponent implements OnInit {
   register() {
     this.submitted = true;
     // stop here if form is invalid
-   console.log('form values', this.registerForm.value);
+    console.log('form values', this.registerForm.value);
 
     if (this.registerForm.invalid) {
+      this.openSnackBar('Invalid Form Fields', 'Error')
       return;
     }
-    // this.toast.setMessage('you successfully registered!', 'success');
     this.userService.register(this.registerForm.value).subscribe(
       res => {
-        // currentUser
-        // this.toast.setMessage('you successfully registered!', 'success');
         console.log('registeer done');
         this.router.navigate(['/']);
-        // this.openDialog();
       },
       error => this.openSnackBar('Invalid credentials', 'Error')
-
     );
   }
 

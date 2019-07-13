@@ -1,0 +1,74 @@
+<app-header></app-header>
+<section class="vr-web" fxFlex="1155px" fxFlex.xs="95%;" ngClass.xs="responsive-six" ngClass.sm="responsive-six1"
+  ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
+  <div fxLayout="row" class="home-page" fxLayoutAlign="center center">
+    <div ngClass="login-page" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="100%;" fxLayoutAlign="center center">
+      <mat-card fxFlex="100%;">
+        <h1>3D Model</h1>
+        <div fxLayout="column" class="example-container">
+          <div class="tabel-listing">
+
+
+
+              <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                  <!-- Checkbox Column -->
+                  <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef>
+                      <mat-checkbox (change)="$event ? masterToggle() : null"
+                                    [checked]="selection.hasValue() && isAllSelected()"
+                                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                                    [aria-label]="checkboxLabel()">
+                      </mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let row">
+                      <mat-checkbox (click)="$event.stopPropagation()"
+                                    (change)="$event ? selection.toggle(row) : null"
+                                    [checked]="selection.isSelected(row)"
+                                    [aria-label]="checkboxLabel(row)">
+                      </mat-checkbox>
+                    </td>
+                  </ng-container>
+                
+                  <!-- Project name Column -->
+                  <ng-container matColumnDef="projectname">
+                    <th mat-header-cell *matHeaderCellDef> Project Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.projectname}} </td>
+                  </ng-container>
+                
+                  <!-- date  Column -->
+                  <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef> Date Added </th>
+                    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                  </ng-container>
+                
+                  <!-- publish Column -->
+                  <ng-container matColumnDef="publish">
+                    <th mat-header-cell *matHeaderCellDef> Publish </th>
+                    <td mat-cell *matCellDef="let element">  
+                        <mat-radio-button class="example-margin" value="publish">                            
+                          </mat-radio-button>
+                    </td>
+                  </ng-container>
+                
+<!-- 
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                      (click)="selection.toggle(row)">
+                  </tr> -->
+                </mat-table>
+
+
+            <div class="example-button-row">
+              <button routerLink="/home/create-project" mat-raised-button color="primary">
+                Create First VR Project</button>
+            </div>
+
+
+            <!-- <a routerLink="/">Learn More</a> -->
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</section>

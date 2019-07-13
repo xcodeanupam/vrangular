@@ -16,7 +16,7 @@ export class AllProjectsComponent implements OnInit {
   user_id: any = this.auth.currentUser.user_id;
     projectname: any;
 
-
+    
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -24,7 +24,7 @@ export class AllProjectsComponent implements OnInit {
     public auth: AuthServices,
     public userService: UserserviceService
   ) { }
-
+ 
   ngOnInit() {
     this.getname();
   }
@@ -40,7 +40,7 @@ export class AllProjectsComponent implements OnInit {
       error => console.log(error)
     );
   }
-
+   
 
   currentProject(project) {
     this.router.navigate(['/project/' + project]);

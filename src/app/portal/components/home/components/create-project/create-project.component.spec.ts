@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThreeDModelComponent } from './three-d-model.component';
+import { CreateProjectComponent } from './create-project.component';
 
-describe('ThreeDModelComponent', () => {
-  let component: ThreeDModelComponent;
-  let fixture: ComponentFixture<ThreeDModelComponent>;
+describe('CreateProjectComponent', () => {
+  let component: CreateProjectComponent;
+  let fixture: ComponentFixture<CreateProjectComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ThreeDModelComponent ]
+      declarations: [ CreateProjectComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ThreeDModelComponent);
+    fixture = TestBed.createComponent(CreateProjectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

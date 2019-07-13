@@ -15,18 +15,20 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { HttpModule } from '@angular/http';
+import {CdkTableModule} from '@angular/cdk/table';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule, PortalModule, FormsModule,  ReactiveFormsModule,
-    BrowserAnimationsModule, AngularFirestoreModule, AngularFireStorageModule, AngularFireAuthModule, HttpModule,
+    BrowserAnimationsModule, AngularFirestoreModule, AngularFireStorageModule, AngularFireAuthModule, HttpModule, CdkTableModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

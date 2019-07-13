@@ -3,15 +3,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { v4 as uuid } from 'uuid';
-import { AuthServices } from '../../service/auth.service';
-import { UserserviceService } from '../../service/userservice.service';
-
+import { AuthServices } from '../../../../service/auth.service';
+import { UserserviceService } from '../../../../service/userservice.service';
 @Component({
-  selector: 'app-create-name-webapp',
-  templateUrl: './create-name-webapp.component.html',
-  styleUrls: ['./create-name-webapp.component.scss']
+  selector: 'app-create-project',
+  templateUrl: './create-project.component.html',
+  styleUrls: ['./create-project.component.scss']
 })
-export class CreateNameWebappComponent implements OnInit {
+export class CreateProjectComponent implements OnInit {
+
   submitted = false;
   createprojectForm: FormGroup;
   user_id: any = this.auth.currentUser.user_id;
@@ -31,6 +31,7 @@ export class CreateNameWebappComponent implements OnInit {
   ngOnInit() {
     this.createprojectForm = this.formBuilder.group({
       projectname: ['', Validators.required],
+      publish: [],
       user_id: this.user_id,
       data_id: uuid(),
       project_id: uuid()
@@ -51,7 +52,7 @@ export class CreateNameWebappComponent implements OnInit {
         if (this.auth.currentUser.new === 'true') {
           this.updateUser();
         }
-        this.router.navigate(['/project/' + this.createprojectForm.value.projectname]);
+        this.router.navigate(['/project/' + this.createprojectForm.value]);
       },
       //  error => error
       error => this.openSnackBar('Invalid credentials', 'Error')
@@ -76,5 +77,4 @@ export class CreateNameWebappComponent implements OnInit {
 
 
 }
-
 

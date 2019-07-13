@@ -1,0 +1,45 @@
+<app-header></app-header>
+<section class="vr-web" fxFlex="1155px" fxFlex.xs="95%;" ngClass.xs="responsive-six" ngClass.sm="responsive-six1"
+ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
+<div fxLayout="row" class="project-file" fxLayoutAlign="center center">
+  <div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="10%;"></div>
+  <div ngClass="login-page" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="80%;" fxLayoutAlign="center center">
+    <mat-card fxFlex="100%;">
+      <h1>3D Model</h1>
+      <div fxLayout="column" class="example-container">
+
+        <form class="ss" >
+            <div fxLayout="column" class="input-group" >
+                <label>Project Name</label>
+                <input type="text" name="discription" formControlName="discription" matInput
+                  placeholder="New Web App">
+              </div>
+              <div fxLayout="column" class="input-group" >
+                    <label>Date Range</label>
+                <input matInput [matDatepicker]="picker" >
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </div>
+              <div fxLayout="column" class="input-group" >
+                <label>Date Range</label>
+            <input matInput [matDatepicker]="picker1" >
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </div>
+          <div fxLayout="column" class="input-group status" >
+              <label>status</label>
+
+              <mat-slide-toggle>Publish</mat-slide-toggle>
+
+
+</div>
+
+
+
+        </form>
+      </div>
+    </mat-card>
+  </div>
+  <div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="10%;"></div>
+</div>
+</section>

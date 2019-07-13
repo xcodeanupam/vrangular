@@ -33,6 +33,9 @@ export class UserserviceService {
     return this.http.post('/api/addproject', JSON.stringify(credentials), this.options).map(res => res.json());
   }
 
+  updateUserPoject(credentials): Observable<any> {
+    return this.http.post('/api/updateUserProject', JSON.stringify(credentials), this.options).map(res => res.json());
+  }
   
   getUsers(data): Observable<any> {
     return this.http.post('/api/getProjects', JSON.stringify(data), this.options).map(res => res.json());
