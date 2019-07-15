@@ -29,11 +29,13 @@ export class CreateNameWebappComponent implements OnInit {
 
 
   ngOnInit() {
+   const id=  Math.floor(100000 + Math.random() * 900000);
+
     this.createprojectForm = this.formBuilder.group({
       projectname: ['', Validators.required],
       user_id: this.user_id,
       data_id: uuid(),
-      project_id: uuid()
+      project_id: id
     });
   }
 

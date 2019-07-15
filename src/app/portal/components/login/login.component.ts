@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
       res => {
         // this.toast.setMessage('you successfully Loggedin!', 'success');
         console.log('loged in successfully');
-        this.router.navigate(['/new-web-app']);
+        this.router.navigate(['/home']);
       },
     //  error => error
     error => this.openSnackBar('Invalid credentials', 'Error')

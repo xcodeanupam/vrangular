@@ -13,7 +13,7 @@ export class ListThreeDModelComponent implements OnInit {
   notstartlist: any;
   isLoading: boolean;
   currentVendor = this.auth.currentUser;
-  displayedColumns: string[] = ['title', 'bedName', 'username', 'overallscore', 'action'];
+  // displayedColumns: string[] = ['productname', 'date', 'discription'];
   dataSource = new MatTableDataSource<any>();
   reviewForm: FormGroup;
 

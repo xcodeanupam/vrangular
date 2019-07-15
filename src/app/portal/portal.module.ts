@@ -29,8 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthServices } from './service/auth.service';
 import { UserserviceService } from './service/userservice.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule, MatSliderModule} from '@angular/material';
+import {MatNativeDateModule, MatTableModule, MatSliderModule} from '@angular/material';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -42,7 +43,7 @@ import { ThreeDFileUploadComponent } from './components/three-d-models/component
 import { ThreeDFileNameComponent } from './components/three-d-models/components/three-d-file-name/three-d-file-name.component';
 import { ListThreeDModelComponent } from './components/three-d-models/components/list-three-d-model/list-three-d-model.component';
 import { CreateProjectComponent } from './components/home/components/create-project/create-project.component';
-import { HomeComponent } from './components/home/components/home/home.component';
+import { HomeComponent, HomeDialog } from './components/home/components/home/home.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
 const portalRoutes: Routes = [
@@ -74,15 +75,15 @@ const portalRoutes: Routes = [
     AllProjectsComponent,
     ThreeDFileUploadComponent,
     ThreeDFileNameComponent,
-    ListThreeDModelComponent,
-    CreateProjectComponent,
+    ListThreeDModelComponent, 
+    CreateProjectComponent, HomeDialog,
     HomeComponent],
 
     imports: [HttpClientModule, FormsModule, ReactiveFormsModule,
     CommonModule, MatCardModule, FlexLayoutModule, MatFormFieldModule, MatButtonModule, MatIconModule,
     MatSnackBarModule, MatInputModule, ColorPickerModule, MatDialogModule,  MatDatepickerModule, MatNativeDateModule,
-    MatSliderModule, MatSlideToggleModule,  MatPaginatorModule,
-    DragDropModule, JwtModule.forRoot({ config:
+    MatSliderModule, MatSlideToggleModule,  MatPaginatorModule, MatTableModule, MatCheckboxModule
+    ,DragDropModule, JwtModule.forRoot({ config:
      {
         tokenGetter, whitelistedDomains: ['localhost:3001'],
         blacklistedRoutes: ['localhost:3001/auth/']
@@ -93,6 +94,7 @@ const portalRoutes: Routes = [
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [ HeaderComponent],
+  entryComponents: [HomeDialog]
    })
 
 export class PortalModule { }

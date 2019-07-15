@@ -5,7 +5,7 @@ ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
   <div fxFlex.xs="0%;" fxFlex.sm="0%;" fxFlex="10%;"></div>
   <div ngClass="login-page" fxFlex.xs="100%;" fxFlex.sm="100%;" fxFlex="80%;" fxLayoutAlign="center center">
     <mat-card fxFlex="100%;">
-      <h1>3D Model</h1>
+      <h1>Create a New Project</h1>
       <div fxLayout="column" class="example-container">
 
         <form class="ss" [formGroup]="createprojectForm" (ngSubmit)="createname()">
@@ -15,13 +15,13 @@ ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
                 placeholder="Project Name" required>
               </div>
   
-          <div fxLayout="column" class="input-group status" >
+          <!-- <div fxLayout="column" class="input-group status" >
               <label>status</label>
 
               <mat-slide-toggle name="publish" formControlName="publish">Publish</mat-slide-toggle>
 
 
-</div>
+</div> -->
 <div fxLayout="row" fxLayoutAlign="center center" class="example-button-row">
     <input type="submit" ngClass="loginbtn savebtn" mat-raised-button value="Save">
     

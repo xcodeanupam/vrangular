@@ -1,0 +1,65 @@
+<section class="homedia">
+
+    <h1>Publish {{project.projectname}}</h1>
+    <p>Are you sure you want to publish this Web App</p>
+
+    <div fxLayout="row" fxLayoutAlign="center center" class="example-button-row">
+        <input type="submit" ngClass="loginbtn savebtn" mat-raised-button value="Publish">
+
+        <a routerLink="/home" ngClass="loginbtn cancelbtn">Cancel</a>
+    </div>
+
+</section>
+
+<style>
+    .example-button-row input {
+        margin: 3pc 5pc 2pc 0px;
+        box-shadow: none;
+        border: 0;
+        height: 40px;
+        padding: 0px 25px !important;
+        font-size: 18px !important;
+        color: #fff;
+        font-weight: normal;
+        letter-spacing: 1px;
+        font-family: "Open Sans", sans-serif;
+        background: #79a5d2 !important;
+        width: auto;
+        border-radius: 30px;
+    }
+
+    .homedia h1 {
+        font-size: 25px;
+        padding: 0px 25px;
+    }
+
+    .homedia p {
+        padding: 12pc 0px 8pc;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 0.8px;
+        font-size: 15px;
+        color: #454545;
+    }
+
+    a.loginbtn.cancelbtn:hover {
+        text-decoration: none;
+    }
+
+    a.loginbtn.cancelbtn {
+        margin: 3pc 15px 2pc 0px;
+        box-shadow: none;
+        border: 0;
+        height: 40px;
+        padding: 5px 21px !important;
+        font-size: 18px !important;
+        color: #fff;
+        font-weight: normal;
+        letter-spacing: 1px;
+        font-family: "Open Sans", sans-serif;
+        background: #ef5b5a !important;
+        cursor: pointer;
+        width: auto;
+        border-radius: 30px;
+    }
+</style>

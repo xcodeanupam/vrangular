@@ -4,12 +4,12 @@
     }
     }
     .vr-web{
-    margin: 0 auto;    z-index: 9;
+    margin: 0 auto;z-index: 9;
     }
     .login-page h1{
             font-size:30px;
             margin-bottom: 5px;
-            padding: 15px 15px 4pc;
+            padding: 15px 5pc 3pc;
     }
     .login-page{
             margin-top: 6%;
@@ -50,11 +50,14 @@
             padding: 0pc 0px 6pc;
     }
     label {
-          padding: 30px 3px 3px;
-          display: block;
-          color: #0E432C;
-          font-size: 17px;
-          letter-spacing: 0px;margin: 0px;
+        padding: 5pc 3px 8px;
+        display: block;
+        color: #353535;
+        font-size: 15px;
+        margin: 0px;
+        font-weight: bold;
+        text-transform: capitalize;
+        letter-spacing: 0.7px;
     }
   
     ::ng-deep{
@@ -95,17 +98,17 @@
         background: #c6cbd4 !important;
     }
     .example-button-row input {
-        margin: 3pc 15px 2pc 0px;
+        margin: 3pc 5pc 2pc 0px;
         box-shadow: none;
         border: 0;
-        height: 45px;
-        padding: 0px 40px !important;
+        height: 40px;
+        padding: 0px 25px !important;
         font-size: 18px !important;
         color: #fff;
         font-weight: normal;
         letter-spacing: 1px;
         font-family: "Open Sans", sans-serif;
-        background: #58d485 !important;
+        background: #79a5d2 !important;
         width: auto;
     border-radius: 30px;
     }
@@ -153,18 +156,19 @@ a.loginbtn.cancelbtn {
     margin: 3pc 15px 2pc 0px;
     box-shadow: none;
     border: 0;
-    height: 45px;
-    padding: 8px 32px !important;
+    height: 40px;
+    padding: 5px 21px !important;
     font-size: 18px !important;
     color: #fff;
     font-weight: normal;
     letter-spacing: 1px;
     font-family: "Open Sans", sans-serif;
-    background: #c6cbd4 !important;
+    background: #ef5b5a !important;
     cursor: pointer;
-    width: auto; 
+    width: auto;
     border-radius: 30px;
 }
+
     
     
     

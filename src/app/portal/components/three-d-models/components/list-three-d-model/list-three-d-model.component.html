@@ -9,32 +9,24 @@ ngClass.md="responsive-six2" fxFlex.sm="535px" fxFlex.md="950px">
             <div class="tabel-listing">
                    
                     <table mat-table  class="mat-elevation-z8">
-          
-                            <ng-container matColumnDef="bedName">
-                              <th mat-header-cell > File Type </th>
-                              <td mat-cell ="let element">  </td>
-                            </ng-container>
-                
+                                            
                             <!-- Weight Column -->
-                            <ng-container matColumnDef="productType">
+                            <ng-container matColumnDef="productname">
                               <th mat-header-cell > Name </th>
                               <td mat-cell ></td>
                             </ng-container>
                 
                             <!-- Symbol Column -->
-                            <ng-container matColumnDef="totalView">
+                            <ng-container matColumnDef="date">
                               <th mat-header-cell> Date Added </th>
                               <td mat-cell ="let element"> </td>
                             </ng-container>
-                            <ng-container matColumnDef="totalView">
+                            <ng-container matColumnDef="discription">
                                     <th mat-header-cell> Discription </th>
                                     <td mat-cell ="let element"> </td>
                                   </ng-container>
                           </table>
-
-
-
-                          
+                       
                           <div class="example-button-row">
                                 <button routerLink="/three-d-model/upload-file" mat-raised-button color="primary">Add First 3D-Model</button>
                               </div>

@@ -11,12 +11,10 @@ import { UserserviceService } from '../../../../service/userservice.service';
   styleUrls: ['./create-project.component.scss']
 })
 export class CreateProjectComponent implements OnInit {
-
   submitted = false;
   createprojectForm: FormGroup;
   user_id: any = this.auth.currentUser.user_id;
   upUserForm: FormGroup;
-
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,8 +24,6 @@ export class CreateProjectComponent implements OnInit {
     public auth: AuthServices,
     public userService: UserserviceService
   ) { }
-
-
   ngOnInit() {
     this.createprojectForm = this.formBuilder.group({
       projectname: ['', Validators.required],
@@ -37,13 +33,11 @@ export class CreateProjectComponent implements OnInit {
       project_id: uuid()
     });
   }
-
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
       duration: 2000,
     });
   }
-
   createname() {
     console.log('form create a webapp', this.createprojectForm.value);
     this.userService.addProject(this.createprojectForm.value).subscribe(
@@ -52,20 +46,18 @@ export class CreateProjectComponent implements OnInit {
         if (this.auth.currentUser.new === 'true') {
           this.updateUser();
         }
-        this.router.navigate(['/project/' + this.createprojectForm.value]);
+        this.router.navigate(['/home/' + this.createprojectForm.value]);
       },
       //  error => error
       error => this.openSnackBar('Invalid credentials', 'Error')
     );
   }
-
   updateUser() {
     this.user_id;
     this.upUserForm = this.formBuilder.group({
       user_id: this.user_id,
       new: 'false'
     });
-
     this.userService.updateUserPoject(this.upUserForm.value).subscribe(
       res => {
         return;
@@ -74,7 +66,5 @@ export class CreateProjectComponent implements OnInit {
       error => console.log(error)
     );
   }
-
-
 }
 
